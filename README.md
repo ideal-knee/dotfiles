@@ -1,5 +1,5 @@
-System Config
-=============
+Dotfiles
+========
 
 To overwrite `~/.emacs.d`, `~/.tmux.conf`, `~/.vim`, and `~/.vimrc`:
 
