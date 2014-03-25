@@ -1,3 +1,14 @@
 /.DS_Store
 *.swp
 .netrwhist
+.smex-items
+elpa
+ac-comphist.dat
+init.el.base
+eshell
+auto-save-list
+tramp
+swank
+ido.last
+recentf
+url/cookies

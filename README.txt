@@ -1,13 +1,20 @@
-After cloning this project, you can run the following to link these dotfiles
-into your home directory:
+System Config
+=============
+
+To overwrite `~/.emacs.d`, `~/.tmux.conf`, `~/.vim`, and `~/.vimrc`:
 
     rake activate
 
-Be warned: this will overwrite any existing .vimrc, .gvimrc or .vim/ files you
-have in your home directory.
+To build vim with command-t:
 
-If you plan on using command-t, you'll need to build the C extension. Make sure
-to use the ruby you built vim against:
-
-    rvm use system
+    rbenv shell <ruby-version-you-like>
+    brew install vim
     rake compile_command_t
+
+Credits
+-------
+
+[Bedra](https://github.com/abedra/emacs.d),
+[Drew](https://github.com/drewolson/vim_dotfiles),
+[Pilat](https://github.com/mikepilat/dotfiles), et al.
+
