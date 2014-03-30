@@ -1,7 +1,7 @@
 Dotfiles
 ========
 
-To overwrite `~/.emacs.d`, `~/.tmux.conf`, `~/.vim`, and `~/.vimrc`:
+To overwrite `~/.emacs.d/`, `~/.lein/`, `~/.tmux.conf`, `~/.vim/`, and `~/.vimrc`:
 
     rake activate
 
@@ -10,6 +10,10 @@ To build vim with command-t:
     rbenv shell <ruby-version-you-like>
     brew install vim
     rake compile_command_t
+
+`~/.lein/profiles.clj` assumes you have run:
+
+    brew install android-sdk
 
 Credits
 -------

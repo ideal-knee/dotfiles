@@ -1,13 +1,18 @@
-task :default => :compile_command_t
+task :default => :tasks
 
-desc 'compile Comamnd-T'
+desc 'Print rake tasks'
+task :tasks do
+  sh "rake -T"
+end
+
+desc 'Compile Command-T'
 task :compile_command_t do
   Dir.chdir(File.dirname(__FILE__) + "/vim/bundle/command-t") do
     sh "rake make"
   end
 end
 
-desc 'symlink files into home directory'
+desc 'Symlink files into home directory'
 task :activate do
   working_dir = File.expand_path(File.dirname(__FILE__))
   home_dir = File.expand_path("~")
