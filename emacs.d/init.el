@@ -146,7 +146,10 @@
   (add-hook (intern (format "%s-hook" mode))
 	    #'dkee/engage-lisp-power))
 
-(setq inferior-lisp-program "clisp")
+; SBCL SLIME
+(require 'slime-autoloads)
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+
 (add-hook 'ruby-mode-hook
 	  (lambda ()
 	    (autopair-mode)))
@@ -171,3 +174,4 @@
 (add-to-list 'auto-mode-alist '("\\.mdown$" . markdown-mode))
 (add-hook 'markdown-mode-hook (lambda () (visual-line-mode t)))
 (setq markdown-command "pandoc --smart -f markdown -t html")
+

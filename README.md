@@ -15,6 +15,10 @@ To build vim with command-t:
 
     brew install android-sdk
 
+`~/.emacs.d/init.el` assumes you have run:
+
+    brew install sbcl
+
 Credits
 -------
 
