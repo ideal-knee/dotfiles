@@ -17,6 +17,7 @@
 			clojure-test-mode
 			coffee-mode
 			deft
+			elixir-mode
 			gist
 			go-mode
 			haml-mode
@@ -175,3 +176,15 @@
 (add-hook 'markdown-mode-hook (lambda () (visual-line-mode t)))
 (setq markdown-command "pandoc --smart -f markdown -t html")
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(haskell-mode-hook (quote (turn-on-haskell-indent))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
