@@ -149,7 +149,7 @@
 
 ; SBCL SLIME
 (require 'slime-autoloads)
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(setq inferior-lisp-program "/usr/local/bin/sbcl --noinform --no-linedit")
 
 (add-hook 'ruby-mode-hook
 	  (lambda ()

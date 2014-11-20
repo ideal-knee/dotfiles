@@ -1,7 +1,7 @@
 Dotfiles
 ========
 
-To overwrite `~/.emacs.d/`, `~/.lein/`, `~/.tmux.conf`, `~/.vim/`, and `~/.vimrc`:
+To overwrite `~/.emacs.d/`, `~/.lein/`, `~/.sbclrc`, `~/.tmux.conf`, `~/.vim/`, and `~/.vimrc`:
 
     rake activate
 
@@ -15,9 +15,12 @@ To build vim with command-t:
 
     brew install android-sdk
 
-`~/.emacs.d/init.el` assumes you have run:
+`~/.emacs.d/init.el` and `~/.sbclrc` assume you have run:
 
     brew install sbcl
+    curl -O http://beta.quicklisp.org/quicklisp.lisp
+    sbcl --load quicklisp.lisp
+    # then `(quicklisp-quickstart:install)` in SBCL
 
 Credits
 -------
