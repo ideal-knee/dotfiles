@@ -147,9 +147,25 @@
   (add-hook (intern (format "%s-hook" mode))
 	    #'dkee/engage-lisp-power))
 
+
+
 ; SBCL SLIME
+
 (require 'slime-autoloads)
+
 (setq inferior-lisp-program "/usr/local/bin/sbcl --noinform --no-linedit")
+
+; From http://www.emacswiki.org/SlimeMode
+(add-hook 'slime-mode-hook
+          (defun slime-sanitize-bindings ()
+            "Removes SLIME's keybinding on M-n and M-p"
+            (cond ((boundp 'slime-mode-map)
+                   (define-key slime-mode-map (kbd "M-n") nil)
+                   (define-key slime-mode-map (kbd "M-p") nil)
+                   (message "slime keybindings on M-n and M-p have been sanitized"))
+                  ('t (message "slime keybindings not sanitized")))))
+
+
 
 (add-hook 'ruby-mode-hook
 	  (lambda ()
