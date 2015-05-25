@@ -71,7 +71,6 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region)
-(global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (setq echo-keystrokes 0.1
@@ -210,3 +209,4 @@
 (global-set-key (kbd "M-n") 'scroll-up-line  )
 (global-set-key (kbd "M-p") 'scroll-down-line)
 
+(put 'upcase-region 'disabled nil)
