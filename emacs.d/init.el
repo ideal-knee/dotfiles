@@ -11,37 +11,38 @@
 
 (setq package-archive-enable-alist '(("melpa" deft magit)))
 (defvar dkee/packages '(ac-slime
-			auto-complete
-			autopair
-			clojure-mode
-			clojure-test-mode
-			coffee-mode
-			deft
-			elixir-mode
-			gist
-			go-mode
-			haml-mode
-			haskell-mode
-			htmlize
-			magit
-			markdown-mode
-			marmalade
-			nrepl
-			o-blog
-			org
-			paredit
-			puppet-mode
-			restclient
-			rvm
-			smex
-			sml-mode
-			yaml-mode)
+                        auto-complete
+                        autopair
+                        clojure-mode
+                        clojure-test-mode
+                        coffee-mode
+                        deft
+                        elixir-mode
+                        gist
+                        go-mode
+                        haml-mode
+                        haskell-mode
+                        htmlize
+                        magit
+                        markdown-mode
+                        marmalade
+                        neotree
+                        nrepl
+                        o-blog
+                        org
+                        paredit
+                        puppet-mode
+                        restclient
+                        rvm
+                        smex
+                        sml-mode
+                        yaml-mode)
   "Default packages")
 
 (defun dkee/packages-installed-p ()
   (loop for pkg in dkee/packages
-	when (not (package-installed-p pkg)) do (return nil)
-	finally (return t)))
+        when (not (package-installed-p pkg)) do (return nil)
+        finally (return t)))
 
 (unless (dkee/packages-installed-p)
   (message "%s" "Refreshing package database...")
@@ -126,10 +127,10 @@
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (require 'autopair)
 (setq lisp-modes '(lisp-mode
-		   emacs-lisp-mode
-		   common-lisp-mode
-		   scheme-mode
-		   clojure-mode))
+                   emacs-lisp-mode
+                   common-lisp-mode
+                   scheme-mode
+                   clojure-mode))
 
 (defvar lisp-power-map (make-keymap))
 (define-minor-mode lisp-power-mode "Fix keybindings; add power."
@@ -144,7 +145,7 @@
 
 (dolist (mode lisp-modes)
   (add-hook (intern (format "%s-hook" mode))
-	    #'dkee/engage-lisp-power))
+            #'dkee/engage-lisp-power))
 
 
 
@@ -167,8 +168,8 @@
 
 
 (add-hook 'ruby-mode-hook
-	  (lambda ()
-	    (autopair-mode)))
+          (lambda ()
+            (autopair-mode)))
 
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
@@ -210,3 +211,6 @@
 (global-set-key (kbd "M-p") 'scroll-down-line)
 
 (put 'upcase-region 'disabled nil)
+
+;; neotree
+(global-set-key [f8] 'neotree-toggle)
