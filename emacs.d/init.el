@@ -13,8 +13,8 @@
 (defvar dkee/packages '(ac-slime
                         auto-complete
                         autopair
+			cider
                         clojure-mode
-                        clojure-test-mode
                         coffee-mode
                         deft
                         elixir-mode
@@ -27,7 +27,6 @@
                         markdown-mode
                         marmalade
                         neotree
-                        nrepl
                         o-blog
                         org
                         paredit
