@@ -13,9 +13,9 @@
 (defvar dkee/packages '(ac-slime
                         auto-complete
                         autopair
-			cider
                         clojure-mode
                         coffee-mode
+                        dash
                         deft
                         elixir-mode
                         gist
@@ -30,7 +30,9 @@
                         o-blog
                         org
                         paredit
+                        pkg-info
                         puppet-mode
+                        queue
                         restclient
                         rvm
                         smex
@@ -213,3 +215,5 @@
 
 ;; neotree
 (global-set-key [f8] 'neotree-toggle)
+
+(require 'cider)
