@@ -224,3 +224,6 @@
 (global-set-key (kbd "C-c j") 'windmove-down)
 (global-set-key (kbd "C-c l") 'windmove-right)
 (global-set-key (kbd "C-c h") 'windmove-left)
+
+(setq linum-format "%d ")
+(global-linum-mode t)
