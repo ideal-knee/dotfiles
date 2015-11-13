@@ -108,8 +108,8 @@
       (neotree-dir project-dir)
       (message "Could not find git project root."))))
 (global-set-key [f8] 'neotree-toggle)
-; (global-set-key (kbd "????") 'neotree-find-in-project-dir)
-; (global-set-key (kbd "????") 'neotree-project-dir)
+(global-set-key (kbd "C-c f") 'neotree-find-in-project-dir)
+(global-set-key (kbd "C-c r") 'neotree-project-dir)
 
 ;; All Lisps
 (show-paren-mode t)
