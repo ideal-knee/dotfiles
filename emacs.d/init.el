@@ -210,8 +210,12 @@
 
 (setq-default indent-tabs-mode nil)
 
-(global-set-key (kbd "M-n") 'scroll-up-line  )
-(global-set-key (kbd "M-p") 'scroll-down-line)
+; scrolling
+(global-set-key (kbd "C-M-e") 'scroll-up-line)
+(global-set-key (kbd "C-M-y") 'scroll-down-line)
+
+; Go to line
+(global-set-key (kbd "M-:") 'goto-line)
 
 (put 'upcase-region 'disabled nil)
 
