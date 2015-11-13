@@ -63,6 +63,7 @@
 (setq make-backup-files nil)
 (setq require-final-newline t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(electric-pair-mode 1)
 
 ;; Navigation
 (global-set-key (kbd "C-M-e") 'scroll-up-line)
