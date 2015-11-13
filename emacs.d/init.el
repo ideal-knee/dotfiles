@@ -21,6 +21,7 @@
                         markdown-mode
                         neotree
                         paredit
+                        queue ; For vendored cider
                         smex)
   "Default packages")
 (defun dkee/packages-installed-p ()
@@ -85,7 +86,7 @@
 (flx-ido-mode 1)
 (setq ido-enable-flex-matching 1)
 (setq ido-use-faces nil)
-(global-set-key (kbd "C-x C-f") 'find-file-in-repository)
+(global-set-key (kbd "C-x f") 'find-file-in-repository)
 
 ;; Neotree (file tree explorer)
 (defun neotree-find-in-project-dir ()
