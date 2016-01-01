@@ -12,5 +12,6 @@ swank
 ido.last
 recentf
 url/cookies
-lein/repl-history
+/lein/repl-history
+/lein/repl-port
 /emacs.d/ensime/
