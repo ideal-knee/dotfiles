@@ -10,7 +10,8 @@
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(defvar dkee/packages '(clojure-mode
+(defvar dkee/packages '(cider
+                        clojure-mode
                         elixir-mode
                         ensime
                         find-file-in-project
@@ -21,7 +22,6 @@
                         markdown-mode
                         neotree
                         paredit
-                        queue ; For vendored cider
                         smex)
   "Default packages")
 (defun dkee/packages-installed-p ()
@@ -118,7 +118,6 @@
 ;; Clojure
 (when (locate-library "clojure-mode")
   (setq initial-major-mode 'clojure-mode))
-(require 'cider)
 
 ;; SBCL SLIME
 (require 'slime-autoloads)
@@ -156,8 +155,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cider-cljs-repl
-   "(do (require 'weasel.repl.websocket) (cemerick.piggieback/cljs-repl (weasel.repl.websocket/repl-env :ip \"127.0.0.1\" :port 9001)))")
+ ;; '(cider-cljs-repl
+ ;;   "(do (require 'weasel.repl.websocket) (cemerick.piggieback/cljs-repl (weasel.repl.websocket/repl-env :ip \"127.0.0.1\" :port 9001)))")
  '(haskell-mode-hook (quote (turn-on-haskell-indent)) t)
  '(neo-window-width 50))
 (custom-set-faces
