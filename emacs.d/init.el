@@ -12,6 +12,7 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (defvar dkee/packages '(cider
                         clojure-mode
+                        dockerfile-mode
                         elixir-mode
                         ensime
                         find-file-in-project
