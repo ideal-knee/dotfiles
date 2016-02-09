@@ -23,8 +23,9 @@
                         markdown-mode
                         neotree
                         paredit
-                        smex)
-  "Default packages")
+                        smex
+                        yaml-mode )
+  "Default packages" )
 (defun dkee/packages-installed-p ()
   (loop for pkg in dkee/packages
         when (not (package-installed-p pkg)) do (return nil)
@@ -156,8 +157,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(cider-cljs-repl
- ;;   "(do (require 'weasel.repl.websocket) (cemerick.piggieback/cljs-repl (weasel.repl.websocket/repl-env :ip \"127.0.0.1\" :port 9001)))")
  '(haskell-mode-hook (quote (turn-on-haskell-indent)) t)
  '(neo-window-width 50))
 (custom-set-faces
@@ -165,4 +164,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(ensime-errline-highlight ((t (:inherit flymake-errline :background "brightred")))))
