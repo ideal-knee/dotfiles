@@ -23,9 +23,11 @@
                         markdown-mode
                         neotree
                         paredit
+                        racket-mode
                         smex
                         yaml-mode )
   "Default packages" )
+
 (defun dkee/packages-installed-p ()
   (loop for pkg in dkee/packages
         when (not (package-installed-p pkg)) do (return nil)
