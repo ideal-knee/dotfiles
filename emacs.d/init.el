@@ -37,13 +37,6 @@
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
-;; Vendored packages
-(defvar dkee/vendor-dir (expand-file-name "vendor" user-emacs-directory))
-(add-to-list 'load-path dkee/vendor-dir)
-(dolist (project (directory-files dkee/vendor-dir t "\\w+"))
-  (when (file-directory-p project)
-    (add-to-list 'load-path project)))
-
 ;; Start up
 (setq inhibit-splash-screen t
       inhibit-startup-message t
@@ -121,19 +114,6 @@
 ;; Clojure
 (when (locate-library "clojure-mode")
   (setq initial-major-mode 'clojure-mode))
-
-;; SBCL SLIME
-(require 'slime-autoloads)
-(setq inferior-lisp-program "/usr/local/bin/sbcl --noinform --no-linedit")
-; From http://www.emacswiki.org/SlimeMode
-(add-hook 'slime-mode-hook
-          (defun slime-sanitize-bindings ()
-            "Removes SLIME's keybinding on M-n and M-p"
-            (cond ((boundp 'slime-mode-map)
-                   (define-key slime-mode-map (kbd "M-n") nil)
-                   (define-key slime-mode-map (kbd "M-p") nil)
-                   (message "slime keybindings on M-n and M-p have been sanitized"))
-                  ('t (message "slime keybindings not sanitized")))))
 
 ;; Ruby
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
