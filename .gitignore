@@ -14,4 +14,5 @@ recentf
 url/cookies
 /lein/repl-history
 /lein/repl-port
+/lein/self-installs
 /emacs.d/ensime/
