@@ -43,6 +43,7 @@
       initial-scratch-message nil)
 
 ;; Display
+(menu-bar-mode -1)
 (setq-default show-trailing-whitespace t)
 (setq-default indicate-empty-lines t)
 (when (not indicate-empty-lines)
@@ -84,6 +85,15 @@
 (setq ido-enable-flex-matching 1)
 (setq ido-use-faces nil)
 (global-set-key (kbd "C-x f") 'find-file-in-repository)
+
+;; Paredit
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook                  #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook                        #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook                        #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook            #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook                      #'enable-paredit-mode)
 
 ;; Neotree (file tree explorer)
 (defun neotree-find-in-project-dir ()
