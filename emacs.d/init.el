@@ -17,6 +17,7 @@
                         find-file-in-repository
                         flx-ido
                         haskell-mode
+                        json-mode
                         magit
                         markdown-mode
                         neotree
