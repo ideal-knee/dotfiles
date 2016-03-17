@@ -119,6 +119,7 @@
 (define-key smartparens-mode-map (kbd "M-B") 'sp-backward-symbol)
 (add-hook 'clojure-mode-hook    #'smartparens-mode)
 (add-hook 'cider-repl-mode-hook #'smartparens-mode)
+(add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
 
 ;; Neotree (file tree explorer)
 (defun neotree-find-in-project-dir ()
