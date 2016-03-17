@@ -21,9 +21,9 @@
                         magit
                         markdown-mode
                         neotree
-                        paredit
                         racket-mode
                         smex
+                        smartparens
                         yaml-mode )
   "Default packages" )
 
@@ -64,8 +64,8 @@
 (electric-indent-mode 0)
 
 ;; Navigation
-(global-set-key (kbd "C-M-e") 'scroll-up-line)
-(global-set-key (kbd "C-M-y") 'scroll-down-line)
+(global-set-key (kbd "ESC <down>") 'scroll-up-line)
+(global-set-key (kbd "ESC <up>") 'scroll-down-line)
 (global-set-key (kbd "M-:") 'goto-line)
 (global-set-key (kbd "C-c k") 'windmove-up)
 (global-set-key (kbd "C-c j") 'windmove-down)
@@ -87,14 +87,38 @@
 (setq ido-use-faces nil)
 (global-set-key (kbd "C-x f") 'find-file-in-repository)
 
-;; Paredit
-(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook                  #'enable-paredit-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
-(add-hook 'ielm-mode-hook                        #'enable-paredit-mode)
-(add-hook 'lisp-mode-hook                        #'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook            #'enable-paredit-mode)
-(add-hook 'scheme-mode-hook                      #'enable-paredit-mode)
+;; Smartparens
+(require 'smartparens-config)
+(define-key smartparens-mode-map (kbd "C-M-f") 'sp-forward-sexp)
+(define-key smartparens-mode-map (kbd "C-M-b") 'sp-backward-sexp)
+(define-key smartparens-mode-map (kbd "C-M-d") 'sp-down-sexp)
+(define-key smartparens-mode-map (kbd "C-M-a") 'sp-backward-down-sexp)
+(define-key smartparens-mode-map (kbd "C-S-d") 'sp-beginning-of-sexp)
+(define-key smartparens-mode-map (kbd "C-S-a") 'sp-end-of-sexp)
+(define-key smartparens-mode-map (kbd "C-M-e") 'sp-up-sexp)
+(define-key smartparens-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
+(define-key smartparens-mode-map (kbd "C-M-t") 'sp-transpose-sexp)
+(define-key smartparens-mode-map (kbd "C-M-n") 'sp-next-sexp)
+(define-key smartparens-mode-map (kbd "C-M-p") 'sp-previous-sexp)
+(define-key smartparens-mode-map (kbd "C-M-k") 'sp-kill-sexp)
+(define-key smartparens-mode-map (kbd "C-M-w") 'sp-copy-sexp)
+(define-key smartparens-mode-map (kbd "M-<delete>") 'sp-unwrap-sexp)
+(define-key smartparens-mode-map (kbd "M-<backspace>") 'sp-backward-unwrap-sexp)
+(define-key smartparens-mode-map (kbd "C-\\") 'sp-forward-slurp-sexp)
+(define-key smartparens-mode-map (kbd "C-M-\\") 'sp-forward-barf-sexp)
+(define-key smartparens-mode-map (kbd "C-]") 'sp-backward-slurp-sexp)
+(define-key smartparens-mode-map (kbd "C-M-]") 'sp-backward-barf-sexp)
+(define-key smartparens-mode-map (kbd "M-D") 'sp-splice-sexp)
+(define-key smartparens-mode-map (kbd "C-M-<delete>") 'sp-splice-sexp-killing-forward)
+(define-key smartparens-mode-map (kbd "C-M-<backspace>") 'sp-splice-sexp-killing-backward)
+(define-key smartparens-mode-map (kbd "C-S-<backspace>") 'sp-splice-sexp-killing-around)
+;;(define-key smartparens-mode-map (kbd "C-]") 'sp-select-next-thing-exchange)
+;;(define-key smartparens-mode-map (kbd "C-<left_bracket>") 'sp-select-previous-thing)
+;;(define-key smartparens-mode-map (kbd "C-M-]") 'sp-select-next-thing)
+(define-key smartparens-mode-map (kbd "M-F") 'sp-forward-symbol)
+(define-key smartparens-mode-map (kbd "M-B") 'sp-backward-symbol)
+(add-hook 'clojure-mode-hook    #'smartparens-mode)
+(add-hook 'cider-repl-mode-hook #'smartparens-mode)
 
 ;; Neotree (file tree explorer)
 (defun neotree-find-in-project-dir ()
