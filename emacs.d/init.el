@@ -150,6 +150,7 @@
 ;; Clojure
 (when (locate-library "clojure-mode")
   (setq initial-major-mode 'clojure-mode))
+(add-hook 'clojure-mode-hook #'company-mode)
 
 ;; Ruby
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
