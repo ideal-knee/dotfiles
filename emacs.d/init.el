@@ -169,6 +169,10 @@
 ;; Scala
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
+;; Let file-local variables (and more importantly directory variables)
+;; go to town
+(setq enable-local-variables :all)
+
 ;; Custom vars
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
