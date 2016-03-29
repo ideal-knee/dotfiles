@@ -169,22 +169,8 @@
 ;; Scala
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
-;; Let file-local variables (and more importantly directory variables)
-;; go to town
-(setq enable-local-variables :all)
-
-;; Custom vars
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(haskell-mode-hook (quote (turn-on-haskell-indent)) t)
- '(neo-window-width 50))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ensime-errline-highlight ((t (:inherit flymake-errline :background "brightred"))))
- '(ensime-implicit-highlight ((t (:background "black")))))
+;; Customizations
+(setq custom-file "~/.emacs.d/customizations.el")
+(if (not (file-exists-p custom-file))
+  (write-region "" nil custom-file) )
+(load custom-file)

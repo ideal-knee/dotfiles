@@ -16,3 +16,4 @@ url/cookies
 /lein/repl-port
 /lein/self-installs
 /emacs.d/ensime/
+/emacs.d/customizations.el
