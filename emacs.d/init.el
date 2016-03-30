@@ -64,8 +64,8 @@
 (electric-indent-mode 0)
 
 ;; Navigation
-(global-set-key (kbd "ESC <down>") 'scroll-up-line)
-(global-set-key (kbd "ESC <up>") 'scroll-down-line)
+(global-set-key (kbd "C-M-e") 'scroll-up-line)
+(global-set-key (kbd "C-M-y") 'scroll-down-line)
 (global-set-key (kbd "M-:") 'goto-line)
 (global-set-key (kbd "C-c k") 'windmove-up)
 (global-set-key (kbd "C-c j") 'windmove-down)
@@ -95,7 +95,7 @@
 (define-key smartparens-mode-map (kbd "C-M-a") 'sp-backward-down-sexp)
 (define-key smartparens-mode-map (kbd "C-S-d") 'sp-beginning-of-sexp)
 (define-key smartparens-mode-map (kbd "C-S-a") 'sp-end-of-sexp)
-(define-key smartparens-mode-map (kbd "C-M-e") 'sp-up-sexp)
+;;(define-key smartparens-mode-map (kbd "C-M-e") 'sp-up-sexp)
 (define-key smartparens-mode-map (kbd "C-M-u") 'sp-backward-up-sexp)
 (define-key smartparens-mode-map (kbd "C-M-t") 'sp-transpose-sexp)
 (define-key smartparens-mode-map (kbd "C-M-n") 'sp-next-sexp)
