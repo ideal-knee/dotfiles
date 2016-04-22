@@ -143,6 +143,7 @@
 (global-set-key [f8] 'neotree-toggle)
 (global-set-key (kbd "C-c f") 'neotree-find-in-project-dir)
 (global-set-key (kbd "C-c r") 'neotree-project-dir)
+(setq neo-window-fixed-size nil)
 
 ;; All Lisps
 (show-paren-mode t)
