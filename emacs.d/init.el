@@ -22,6 +22,7 @@
                         markdown-mode
                         neotree
                         racket-mode
+                        slime
                         smex
                         smartparens
                         yaml-mode )
@@ -148,9 +149,11 @@
 ;; All Lisps
 (show-paren-mode t)
 
+;; Steel Bank Common Lisp
+(setq inferior-lisp-program "/usr/bin/sbcl")
+(slime-setup '(slime-fancy))
+
 ;; Clojure
-(when (locate-library "clojure-mode")
-  (setq initial-major-mode 'clojure-mode))
 (add-hook 'clojure-mode-hook #'company-mode)
 
 ;; Ruby
