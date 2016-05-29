@@ -152,6 +152,8 @@
 ;; Steel Bank Common Lisp
 (setq inferior-lisp-program "/usr/bin/sbcl")
 (slime-setup '(slime-fancy))
+(put 'context 'lisp-indent-function 1)
+(put 'test-that-it 'lisp-indent-function 1)
 
 ;; Clojure
 (add-hook 'clojure-mode-hook #'company-mode)
