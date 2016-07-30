@@ -180,3 +180,9 @@
 (if (not (file-exists-p custom-file))
   (write-region "" nil custom-file) )
 (load custom-file)
+
+;; Keep keybindings the same with or without tmux
+(defun no-tmux ()
+  (interactive)
+  (global-unset-key (kbd "C-a"))
+  (global-set-key (kbd "C-a a") 'move-beginning-of-line) )
