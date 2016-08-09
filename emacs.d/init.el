@@ -157,6 +157,8 @@
 
 ;; Clojure
 (add-hook 'clojure-mode-hook #'company-mode)
+(add-hook 'cider-mode-hook #'eldoc-mode)
+(setq cider-prompt-for-symbol nil)
 
 ;; Ruby
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
