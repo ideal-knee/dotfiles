@@ -63,6 +63,11 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (electric-pair-mode 1)
 (electric-indent-mode 0)
+(defun vim-join-line ()
+  (interactive)
+  (next-line)
+  (join-line) )
+(global-set-key (kbd "M-j") 'vim-join-line)
 
 ;; Navigation
 (global-set-key (kbd "C-M-e") 'scroll-up-line)
