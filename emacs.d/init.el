@@ -182,6 +182,9 @@
 ;; Scala
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
+;; Octave
+(add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
+
 ;; Customizations
 (setq custom-file "~/.emacs.d/customizations.el")
 (if (not (file-exists-p custom-file))
