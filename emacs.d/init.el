@@ -22,6 +22,7 @@
                         markdown-mode
                         neotree
                         racket-mode
+                        rainbow-delimiters
                         slime
                         smex
                         smartparens
@@ -162,6 +163,7 @@
 
 ;; Clojure
 (add-hook 'clojure-mode-hook #'company-mode)
+(add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'cider-mode-hook #'eldoc-mode)
 (setq cider-prompt-for-symbol nil)
 
