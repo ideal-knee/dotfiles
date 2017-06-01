@@ -26,6 +26,7 @@
                         slime
                         smex
                         smartparens
+                        swift-mode
                         yaml-mode )
   "Default packages" )
 
