@@ -168,6 +168,7 @@
 (add-hook 'cider-mode-hook #'eldoc-mode)
 (add-hook 'cider-repl-mode-hook #'eldoc-mode)
 (setq cider-prompt-for-symbol nil)
+(setq cider-lein-parameters "repl :headless :host localhost")
 
 ;; Ruby
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
