@@ -170,6 +170,10 @@
 (add-hook 'cider-repl-mode-hook #'eldoc-mode)
 (setq cider-prompt-for-symbol nil)
 (setq cider-lein-parameters "repl :headless :host localhost")
+(require 'clojure-mode)
+(define-clojure-indent
+  (-> 1)
+  (->> 0) )
 
 ;; Ruby
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
