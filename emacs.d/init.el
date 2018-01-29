@@ -206,3 +206,5 @@
   (interactive)
   (global-unset-key (kbd "C-a"))
   (global-set-key (kbd "C-a a") 'move-beginning-of-line) )
+(when (eq system-type 'darwin)
+  (no-tmux) )
