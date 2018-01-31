@@ -11,6 +11,7 @@
 (defvar dkee/packages '(cider
                         clojure-mode
                         dockerfile-mode
+                        ein
                         elixir-mode
                         ensime
                         find-file-in-project
