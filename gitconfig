@@ -12,7 +12,7 @@
   ch = cherry -v origin
   br = branch
   addall = add -A .
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  hist = log --graph --abbrev-commit --pretty=format:'%C(red)%h%C(reset) - %s %C(green)(%cr) %C(blue)<%an>%C(magenta)%d%C(reset)'
   oneline = log --pretty=format:\"%h %ad%x20%s%x20%x28%an%x29\" --date=short
   current = log --pretty=format:'%ad %h %d' --abbrev-commit --date=short -1
   cur = log --pretty=format:'%ad %h %d' --abbrev-commit --date=short -1
@@ -24,3 +24,5 @@
   unstaged = diff
 
   pile = stash --include-untracked
+[core]
+	autocrlf = false
