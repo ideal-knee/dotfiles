@@ -13,7 +13,7 @@
                         dockerfile-mode
                         ein
                         elixir-mode
-                        ensime
+                        ;; ensime
                         find-file-in-project
                         find-file-in-repository
                         flx-ido
@@ -191,8 +191,8 @@
 (add-to-list 'auto-mode-alist '("\\.mdown$" . markdown-mode))
 (add-hook 'markdown-mode-hook (lambda () (visual-line-mode t)))
 
-;; Scala
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+;; ;; Scala
+;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 ;; Octave
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
