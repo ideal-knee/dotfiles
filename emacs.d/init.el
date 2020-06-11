@@ -1,10 +1,13 @@
+; Make Emacs 26 TLS happy (via https://github.com/syl20bnr/spacemacs/issues/12535)
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3") 
+
 ;; User info
 (setq user-full-name "Dan Kee")
 (setq user-mail-address "dan@dankee.com")
 
 ;; Packages
 (require 'cl)
-(load "package")
+(require 'package)
 (package-initialize)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
