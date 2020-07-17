@@ -1,5 +1,5 @@
 ; Make Emacs 26 TLS happy (via https://github.com/syl20bnr/spacemacs/issues/12535)
-(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3") 
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 ;; User info
 (setq user-full-name "Dan Kee")
@@ -178,7 +178,8 @@
 (require 'clojure-mode)
 (define-clojure-indent
   (-> 1)
-  (->> 0) )
+  (->> 0)
+  (.. 1))
 
 ;; Ruby
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
