@@ -13,6 +13,7 @@
              '("melpa" . "https://melpa.org/packages/") t)
 (defvar dkee/packages '(cider
                         clojure-mode
+                        company
                         dockerfile-mode
                         ein
                         elixir-mode
