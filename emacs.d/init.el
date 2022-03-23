@@ -19,14 +19,16 @@
                         elixir-mode
                         ;; ensime
                         find-file-in-project
-                        find-file-in-repository
+                        ;find-file-in-repository
                         flx-ido
+                        handlebars-mode
                         haskell-mode
                         hy-mode
                         json-mode
                         magit
                         markdown-mode
                         neotree
+                        nodejs-repl
                         racket-mode
                         rainbow-delimiters
                         rust-mode
@@ -34,8 +36,13 @@
                         smex
                         smartparens
                         swift-mode
+                        terraform-mode
+                        use-package
                         yaml-mode )
   "Default packages" )
+
+(add-to-list 'load-path "~/Development/find-file-in-repository")
+(load "find-file-in-repository")
 
 (defun dkee/packages-installed-p ()
   (loop for pkg in dkee/packages
@@ -71,7 +78,7 @@
 (setq require-final-newline t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (electric-pair-mode 1)
-(electric-indent-mode 0)
+;(electric-indent-mode 0)
 (defun vim-join-line ()
   (interactive)
   (next-line)
@@ -79,13 +86,22 @@
 (global-set-key (kbd "M-j") 'vim-join-line)
 
 ;; Navigation
-(global-set-key (kbd "C-M-e") 'scroll-up-line)
-(global-set-key (kbd "C-M-y") 'scroll-down-line)
-(global-set-key (kbd "M-:") 'goto-line)
-(global-set-key (kbd "C-c k") 'windmove-up)
-(global-set-key (kbd "C-c j") 'windmove-down)
-(global-set-key (kbd "C-c l") 'windmove-right)
-(global-set-key (kbd "C-c h") 'windmove-left)
+;; bind-key* overrides major modes, c/o https://emacs.stackexchange.com/a/360
+(bind-keys*
+ ("C-M-e" . scroll-up-line)
+ ("C-M-y" . scroll-down-line)
+ ("M-:" . goto-line)
+ ("C-c k" . windmove-up)
+ ("C-c j" . windmove-down)
+ ("C-c l" . windmove-right)
+ ("C-c h" . windmove-left))
+;; (global-set-key (kbd "C-M-e") 'scroll-up-line)
+;; (global-set-key (kbd "C-M-y") 'scroll-down-line)
+;; (global-set-key (kbd "M-:") 'goto-line)
+;; (global-set-key (kbd "C-c k") 'windmove-up)
+;; (global-set-key (kbd "C-c j") 'windmove-down)
+;; (global-set-key (kbd "C-c l") 'windmove-right)
+;; (global-set-key (kbd "C-c h") 'windmove-left)
 
 ;; Smex mode (enhanced M-x)
 (setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
@@ -205,6 +221,9 @@
 ;; Hy
 (add-to-list 'auto-mode-alist '("\\.hy$" . hy-mode))
 
+;; JavaScript
+(setq js-indent-level 2)
+
 ;; Customizations
 (setq custom-file "~/.emacs.d/customizations.el")
 (if (not (file-exists-p custom-file))
@@ -216,5 +235,6 @@
   (interactive)
   (global-unset-key (kbd "C-a"))
   (global-set-key (kbd "C-a a") 'move-beginning-of-line) )
-(when (eq system-type 'darwin)
-  (no-tmux) )
+; (when (eq system-type 'darwin)
+;   (no-tmux) )
+(put 'upcase-region 'disabled nil)
